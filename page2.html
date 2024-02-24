@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>21</title>
+    <style>
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: "Arial", sans-serif;
+            margin: 0;
+        }
+
+        .container {
+            display: flex;
+        }
+
+        .slideshow-container {
+            position: relative;
+            max-width: 50%; 
+            margin: auto;
+        }
+
+        .slide {
+            display: none;
+            max-width: 100%;
+            height: auto;
+            margin: 0 auto;
+        }
+
+        .text-container {
+            max-width: 50%;
+            color: #333; 
+            padding: 20px;
+        }
+
+        h {
+            font-style: italic;
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        p {
+            font-size: 18px;
+            line-height: 1.5;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="text-container">
+            <h><i>HAPPY BIRTHDAY</i></h>
+            <p>May your special day be as joyful and <br> radiant as you are</p>
+            <p>Celebrate and make beautiful memories</p>
+            <p>happy birthday <br>from sally to you</p>
+            <a href="page3.html">
+                <button style="font-size: 25px;background-color:rgb(53, 52, 52);border-radius: 50px;">NEXT</button>
+             </a>
+        </div>
+        <div class="slideshow-container">
+            <img class="slide" src="c:\Users\sally\Downloads\WhatsApp Image 2024-01-29 at 21.42.21 (1).jpeg" height="550" width="550">
+            <img class="slide" src="c:\Users\sally\Downloads\WhatsApp Image 2024-02-19 at 21.10.14.jpeg" height="750" width="650">
+            <img class="slide" src="WhatsApp Image 2024-01-29 at 21.42.21 (2).jpeg" height="530" width="530">
+        <img class="slide" src="WhatsApp Image 2024-01-21 at 19.58.40 (2).jpeg" height="520" width="520">
+        <img class="slide" src="WhatsApp Image 2024-01-21 at 19.58.40.jpeg" height="390" width="390">
+        <img class="slide" src="c:\Users\sally\Downloads\WhatsApp Image 2024-01-29 at 21.42.21 (3).jpeg" height="370" width="370">
+        <img class="slide" src="c:\Users\sally\Downloads\WhatsApp Image 2024-01-29 at 21.42.21 (4).jpeg" height="520" width="520">
+        <img class="slide" src="c:\Users\sally\Downloads\WhatsApp Image 2024-01-29 at 20.44.47.jpeg" height="350" width="350">
+        <img class="slide" src="c:\Users\sally\Downloads\WhatsApp Image 2024-01-29 at 21.42.21.jpeg" height="350" width="350">
+        <img class="slide" src="WhatsApp Image 2024-01-21 at 19.47.50 (1).jpeg" height="350" width="350">
+        <img class="slide" src="WhatsApp Image 2024-01-21 at 19.47.50 (2).jpeg" height="500" width="500">
+        </div>
+    </div>
+
+    <script>
+        let slideIndex = 0;
+        showSlides();
+
+        function showSlides() {
+            let slides = document.getElementsByClassName("slide");
+
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+
+            slideIndex++;
+
+            if (slideIndex > slides.length) {
+                slideIndex = 1;
+            }
+
+            slides[slideIndex - 1].style.display = "block";
+
+            setTimeout(showSlides, 2000); 
+        }
+    </script>
+</body>
+</html>

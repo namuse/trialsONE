@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>21</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-image: url('WhatsApp Image 2024-01-22 at 20.58.35.jpeg');
+            font-family: "Montserrat";
+            min-height: 100vh;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        :root {
+            --timer-day: 'Sunday';
+            --timer-hours: '00';
+            --timer-minutes: '00';
+            --timer-seconds: '00';
+        }
+
+        .day:before,
+        .hours:before,
+        .minutes:before,
+        .seconds:before {
+            content: '';
+            display: block;
+            height: 5px;
+            width: 5px;
+            background-color: #ffffff4d;
+            border-radius: 50%;
+            position: absolute;
+            right: -42px;
+        }
+
+        .day:before {
+            top: 35%;
+        }
+
+        .hours:before {
+            top: 50%;
+        }
+
+        .minutes:before {
+            top: 65%;
+        }
+
+        .seconds:before {
+            top: 80%;
+        }
+
+        .container {
+            background-color: #080808;
+            border-radius: 5px;
+            padding: 60px 20px;
+            box-shadow: 
+            1px 1px 5px #ffffff26,
+            0 15px 90px 30px #00000040;
+            display: flex;
+            flex-direction: row;
+
+        }
+
+        .col {
+            text-align: center;
+            margin: 0 20px;
+            min-width: 90px;
+            position: relative;
+        }
+
+        .timer {
+            color: #fff;
+            font-size: 4.2rem;
+            text-transform: uppercase;
+        }
+
+        .number {
+            color: #fff;
+            font-size: 2rem;
+        }
+
+        .label {
+            color: #ffffff59;
+            text-transform: uppercase;
+            font-size: 1rem;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <span>
+        <div class="container">
+            <div class="col">
+                <p class="day timer"></p>
+                <p class="number" id="dayNumber"></p>
+                <p class="label">Day</p>
+            </div>
+            <div class="col">
+                <p class="hours timer"></p>
+                <p class="number" id="hoursNumber"></p>
+                <p class="label">Hours</p>
+            </div>
+            <div class="col">
+                <p class="minutes timer"></p>
+                <p class="number" id="minutesNumber"></p>
+                <p class="label">Minutes</p>
+            </div>
+            <div class="col">
+                <p class="seconds timer"></p>
+                <p class="number" id="secondsNumber"></p>
+                <p class="label">Seconds</p>
+            </div>
+        </div>
+        <center>
+            <br>
+            <a href="page2.html">
+           <button style="font-size: 25px;background-color:rgb(53, 52, 52);border-radius: 50px;">BEGIN</button>
+            </a>
+         </center>
+       
+    </span>
+     
+    <script>
+        function updateTime() {
+            const daysOfWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+            const now = new Date();
+            const day = now.getDay();
+            const hours = now.getHours();
+            const minutes = now.getMinutes();
+            const seconds = now.getSeconds();
+
+            const { style } = document.documentElement;
+
+            style.setProperty('--timer-day', `'${daysOfWeek[day]}'`);
+            style.setProperty('--timer-hours', `'${String(hours).padStart(2, '0')}'`);
+            style.setProperty('--timer-minutes', `'${String(minutes).padStart(2, '0')}'`);
+            style.setProperty('--timer-seconds', `'${String(seconds).padStart(2, '0')}'`);
+
+            document.getElementById('dayNumber').innerText = daysOfWeek[day];
+            document.getElementById('hoursNumber').innerText = String(hours).padStart(2, '0');
+            document.getElementById('minutesNumber').innerText = String(minutes).padStart(2, '0');
+            document.getElementById('secondsNumber').innerText = String(seconds).padStart(2, '0');
+        }
+
+        setInterval(updateTime, 1000);
+        updateTime();
+    </script>
+     
+</body>
+</html>

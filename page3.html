@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>21</title>
+    <style>
+        body {
+  font-family: Arial, sans-serif;
+}
+
+h1 {
+  text-align: center;
+}
+
+form {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+label, textarea, input {
+  display: block;
+  margin-bottom: 10px;
+}
+
+textarea {
+  width: 100%;
+  height: 100px;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+    </style>
+</head>
+<body>
+    <h1>Welcome to the Wiltord's Guestbook!</h1>
+  <form id="guestbookForm">
+    <label for="name">Name:</label>
+    <input type="text" id="name" required>
+    <label for="message">Message:</label>
+    <textarea id="message" required></textarea>
+    <button type="submit">Submit</button>
+  </form>
+  <div id="guestbookEntries"></div>
+  <a href="page4.html">
+    <button style="font-size: 25px;background-color:rgb(53, 52, 52);border-radius: 50px;">NEXT!</button>
+ </a>
+  <script>
+    document.getElementById('guestbookForm').addEventListener('submit', function(event) {
+  event.preventDefault();
+
+  var nameInput = document.getElementById('name');
+  var messageInput = document.getElementById('message');
+  var guestbookEntries = document.getElementById('guestbookEntries');
+
+  var entry = document.createElement('div');
+  entry.innerHTML = '<h3>' + nameInput.value + '</h3>' +
+                    '<p>' + messageInput.value + '</p>';
+
+  guestbookEntries.appendChild(entry);
+
+  nameInput.value = '';
+  messageInput.value = '';
+});
+  </script>
+</body>
+</html>

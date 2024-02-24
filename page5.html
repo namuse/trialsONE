@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+<meta charset="UTF-8">
+<title>21</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+  height: 100vh;
+  overflow: hidden;
+  background-color: #2F2F31;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+}
+
+.credits {
+  width: 100%;
+  top: 90%;
+}
+
+.text {
+  text-align: center;
+  font-family: Helvetica;
+  font-size: .8rem;
+  color: grey;
+  pointer-events: none;
+}
+
+.centered,
+.cube > .piece > .element > .sticker {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+.scene {
+  width: 60vmin;
+  height: 60vmin;
+  perspective: 1200px;
+  transform-style: preserve-3d;
+}
+
+.scene > .pivot {
+  width: 0;
+  height: 0;
+  transition: .18s;
+}
+
+.scene .anchor {
+  width: 2em;
+  height: 6em;
+}
+
+.scene div {
+  position: absolute;
+  transform-style: inherit;
+}
+
+#piece4 > .element.top > .sticker {
+  background-color: #DDD;
+}
+
+.cube {
+  font-size: 190%;
+  margin-left: -1em;
+  margin-top: -1em;
+}
+
+.cube > .piece {
+  width: 1.9em;
+  height: 1.9em;
+}
+
+.cube > .piece > .element {
+  width: 100%;
+  height: 100%;
+  background: #0A0A0A;
+  outline: 1px solid transparent;
+  border: 0.05em solid #0A0A0A;
+  border-radius: 10%;
+}
+
+.cube > .piece > .element.left {
+  transform: rotateX(0deg) rotateY(-90deg) rotateZ(180deg) translateZ(1em);
+}
+.cube > .piece > .element.right {
+transform: rotateX(0deg) rotateY(90deg) rotateZ(90deg) translateZ(1em);
+}
+.cube > .piece > .element.back {
+transform: rotateX(0deg) rotateY(180deg) rotateZ(-90deg) translateZ(1em);
+}
+.cube > .piece > .element.front {
+transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg) translateZ(1em);
+}
+.cube > .piece > .element.bottom {
+transform: rotateX(-90deg) rotateY(0deg) rotateZ(-90deg) translateZ(1em);
+}
+.cube > .piece > .element.top {
+transform: rotateX(90deg) rotateY(0deg) rotateZ(180deg) translateZ(1em);
+}
+.cube > .piece > .element > .sticker {
+transform: translateZ(2px);
+width: 95%;
+height: 95%;
+border-radius: 10%;
+outline: 1px solid transparent;
+box-shadow: inset 0.05em 0.05em 0.2rem 0 rgba(255, 255, 255, 0.25), inset -0.05em -0.05em 0.2rem 0 rgba(0, 0, 0, 0.25);
+}
+.cube > .piece > .element > .sticker.blue {
+background-color: #001ca8;
+}
+.cube > .piece > .element > .sticker.green {
+background-color: #006E16;
+}
+.cube > .piece > .element > .sticker.white {
+background-color: #DDD;
+}
+.cube > .piece > .element > .sticker.yellow {
+background-color: #E0AE00;
+}
+.cube > .piece > .element > .sticker.orange {
+background-color: #FF5000;
+}
+.cube > .piece > .element > .sticker.red {
+background-color: #DF0500;
+}
+</style>
+</head>
+<body>
+<div class="scene" id="scene">
+<div class="pivot centered" id="pivot" style="transform: rotateX(-35deg) rotateY(-135deg);">
+<div class="cube" id="cube">
+<div class="piece">
+<div class="element left"></div>
+<div class="element right"></div>
+<div class="element top"></div>
+<div class="element bottom"></div>
+<div class="element back"></div>
+<div class="element front"></div>
+</div>
+<div class="piece">
+<div class="element left"></div>
+<div class="element right"></div>
+<div class="element top"></div>
+<div class="element bottom"></div>
+<div class="element back"></div>
+<div class="element front"></div>
+</div>
+<div class="piece">
+<div class="element left"></div>
+<div class="element right"></div>
+<div class="element top"></div>
+<div class="element bottom"></div>
+<div class="element back"></div>
+<div class="element front"></div>
+</div>
+<div class="piece">
+<div class="element left"></div>
+<div class="element right"></div>
+<div class="element top"></div>
+<div class="element bottom"></div>
+<div class="element back"></div>
+<div class="element front"></div>
+</div>
+<div class="piece">
+<div class="element left"></div>
+<div class="element right"></div>
+<div class="element top"></div>
+<div class="element bottom"></div>
+<div class="element back"></div>
+<div class="element front"></div>
+</div>
+<div class="piece">
+<div class="element left"></div>
+<div class="element right"></div>
+<div class="element top"></div>
+<div class="element bottom"></div>
+<div class="element back"></div>
+<div class="element front"></div>
+</div>
+<div class="piece">
+<div class="element left"></div>
+<div class="element right"></div>
+<div class="element top"></div>
+<div class="element bottom"></div>
+<div class="element back"></div>
+<div class="element front"></div>
+</div>
+<div class="piece">
+<div class="element left"></div>
+<div class="element right"></div>
+<div class="element top"></div>
+<div class="element bottom"></div>
+<div class="element back"></div>
+<div class="element front"></div>
+</div>
+<div class="piece">
+<div class="element left"></div>
+<div class="element right"></div>
+<div class="element top"></div>
+<div class="element bottom"></div>
+<div class="element back"></div>
+<div class="element front"></div>
+</div>
+<div class="piece">
+<div class="element left"></div>
+<div class="element right"></div>
+<div class="element top"></div>
+<div class="element bottom"></div>
+<div class="element back"></div>
+<div class="element front"></div>
+</div>
+<div class="piece">
+<div class="element left"></div>
+<div class="element right"></div>
+<div class="element top"></div>
+<div class="element bottom"></div>
+<div class="element back"></div>
+<div class="element front"></div>
+</div>
+<div class="piece">
+<div class="element left"></div>
+<div class="element right"></div>
+<div class="element top"></div>
+<div class="element bottom"></div>
+<div class="element back"></div>
+<div class="element front"></div>
+</div>
+<div class="piece">
+<div class="element left"></div>
+<div class="element right"></div>
+<div class="element top"></div>
+<div class="element bottom"></div>
+<div class="element back"></div>
+<div class="element front"></div>
+</div>
+<div class="piece">
+<div class="element left"></div>
+<div class="element right"></div>
+<div class="element top"></div>
+<div class="element bottom"></div>
+<div class="element back"></div>
+<div class="element front"></div>
+</div>
+<div class="piece">
+<div class="element left"></div>
+<div class="element right"></div>
+<div class="element top"></div>
+<div class="element bottom"></div>
+<div class="element back"></div>
+<div class="element front"></div>
+</div>
+<div class="piece">
+<div class="element left"></div>
+<div class="element right"></div>
+<div class="element top"></div>
+<div class="element bottom"></div>
+<div class="element back"></div>
+<div class="element front"></div>
+</div>
+<div class="piece">
+<div class="element left"></div>
+<div class="element right"></div>
+<div class="element top"></div>
+<div class="element bottom"></div>
+<div class="element back"></div>
+<div class="element front"></div>
+</div>
+<div class="piece">
+<div class="element left"></div>
+<div class="element right"></div>
+<div class="element top"></div>
+<div class="element bottom"></div>
+<div class="element back"></div>
+<div class="element front"></div>
+</div>
+<div class="piece">
+<div class="element left"></div>
+<div class="element right"></div>
+<div class="element top"></div>
+<div class="element bottom"></div>
+<div class="element back"></div>
+<div class="element front"></div>
+</div>
+<div class="piece">
+<div class="element left"></div>
+<div class="element right"></div>
+<div class="element top"></div>
+<div class="element bottom"></div>
+<div class="element back"></div>
+<div class="element front"></div>
+</div>
+<div class="piece">
+<div class="element left"></div>
+<div class="element right"></div>
+<div class="element top"></div>
+<div class="element bottom"></div>
+<div class="element back"></div>
+<div class="element front"></div>
+</div>
+<div class="piece">
+<div class="element left"></div>
+<div class="element right"></div>
+<div class="element top"></div>
+<div class="element bottom"></div>
+<div class="element back"></div>
+<div class="element front"></div>
+</div>
+<div class="piece">
+<div class="element left"></div>
+<div class="element right"></div>
+<div class="element top"></div>
+<div class="element bottom"></div>
+<div class="element back"></div>
+<div class="element front"></div>
+</div>
+<div class="piece">
+<div class="element left"></div>
+<div class="element right"></div>
+<div class="element top"></div>
+<div class="element bottom"></div>
+<div class="element back"></div>
+<div class="element front"></div>
+</div>
+<div class="piece">
+<div class="element left"></div>
+<div class="element right"></div>
+<div class="element top"></div>
+<div class="element bottom"></div>
+<div class="element back"></div>
+<div class="element front"></div>
+</div>
+<div class="piece">
+<div class="element left"></div>
+<div class="element right"></div>
+<div class="element top"></div>
+<div class="element bottom"></div>
+<div class="element back"></div>
+<div class="element front"></div>
+</div>
+</div>
+</div>
+</div>
+<div id="guide">
+<div class="anchor" id="anchor3" style="transform: translateZ(3px) translateY(-33.33%) rotate(-270deg) translateY(66.67%)"></div>
+<div class="anchor" id="anchor2" style="transform: translateZ(3px) translateY(-33.33%) rotate(-180deg) translateY(66.67%)"></div>
+<div class="anchor" id="anchor1" style="transform: translateZ(3px) translateY(-33.33%) rotate(-90deg) translateY(66.67%)"></div>
+<div class="anchor" id="anchor0" style="transform: translateZ(3px) translateY(-33.33%) rotate(0deg) translateY(66.67%)"></div>
+</div>
+<a href="home.html">
+  <button style="font-size: 25px;background-color:rgb(53, 52, 52);border-radius: 50px;">BACK</button>
+</a>
+<script>
+var colors = ['blue', 'green', 'white', 'yellow', 'orange', 'red'],
+    pieces = document.getElementsByClassName('piece');
+
+function mx(i, j) {
+    return ([2, 4, 3, 5][j % 4 | 0] + i % 2 * ((j | 0) % 4 * 2 + 3) + 2 * (i / 2 | 0)) % 6;
+}
+
+function getAxis(face) {
+    return String.fromCharCode('X'.charCodeAt(0) + face / 2); // X, Y or Z
+}
+
+function assembleCube() {
+    function moveto(face) {
+        id = id + (1 << face);
+        pieces[i].children[face].appendChild(document.createElement('div'))
+            .setAttribute('class', 'sticker ' + colors[face]);
+        return 'translate' + getAxis(face) + '(' + (face % 2 * 4 - 2) + 'em)';
+    }
+    for (var id, x, i = 0; id = 0, i < 26; i++) {
+        x = mx(i, i % 18);
+        pieces[i].style.transform = 'rotateX(0deg)' + moveto(i % 6) +
+            (i > 5 ? moveto(x) + (i > 17 ? moveto(mx(x, x + 2)) : '') : '');
+        pieces[i].setAttribute('id', 'piece' + id);
+    }
+}
+
+function getPieceBy(face, index, corner) {
+    return document.getElementById('piece' +
+        ((1 << face) + (1 << mx(face, index)) + (1 << mx(face, index + 1)) * corner));
+}
+
+function swapPieces(face, times) {
+    for (var i = 0; i < 6 * times; i++) {
+        var piece1 = getPieceBy(face, i / 2, i % 2),
+            piece2 = getPieceBy(face, i / 2 + 1, i % 2);
+        for (var j = 0; j < 5; j++) {
+            var sticker1 = piece1.children[j < 4 ? mx(face, j) : face].firstChild,
+                sticker2 = piece2.children[j < 4 ? mx(face, j + 1) : face].firstChild,
+                className = sticker1 ? sticker1.className : '';
+            if (className)
+                sticker1.className = sticker2.className,
+                sticker2.className = className;
+        }
+    }
+}
+
+function animateRotation(face, cw, currentTime) {
+    var k = .3 * (face % 2 * 2 - 1) * (2 * cw - 1),
+        qubes = Array(9).fill(pieces[face]).map(function (value, index) {
+            return index ? getPieceBy(face, index / 2, index % 2) : value;
+        });
+    (function rotatePieces() {
+        var passed = Date.now() - currentTime,
+            style = 'rotate' + getAxis(face) + '(' + k * passed * (passed < 300) + 'deg)';
+        qubes.forEach(function (piece) {
+            piece.style.transform = piece.style.transform.replace(/rotate.(S+)/, style);
+        });
+        if (passed >= 300)
+            return swapPieces(face, 3 - 2 * cw);
+        requestAnimationFrame(rotatePieces);
+    })();
+}
+
+var touchStartX, touchStartY;
+
+function touchstart(event) {
+    touchStartX = event.touches[0].clientX;
+    touchStartY = event.touches[0].clientY;
+}
+
+function touchmove(event) {
+    event.preventDefault();
+
+    var touchEndX = event.touches[0].clientX;
+    var touchEndY = event.touches[0].clientY;
+
+    var deltaX = touchEndX - touchStartX;
+    var deltaY = touchEndY - touchStartY;
+
+    touchStartX = touchEndX;
+    touchStartY = touchEndY;
+
+    var currentRotationX = pivot.style.transform.match(/rotateX\((-?\d+)deg\)/);
+    var currentRotationY = pivot.style.transform.match(/rotateY\((-?\d+)deg\)/);
+
+    var newRotationX = (currentRotationX ? parseInt(currentRotationX[1]) : 0) + deltaY / 2;
+    var newRotationY = (currentRotationY ? parseInt(currentRotationY[1]) : 0) + deltaX / 2;
+
+    pivot.style.transform = 'rotateX(' + newRotationX + 'deg) rotateY(' + newRotationY + 'deg)';
+}
+
+document.ondragstart = function () { return false; }
+window.addEventListener('load', assembleCube);
+scene.addEventListener('touchstart', touchstart);
+scene.addEventListener('touchmove', touchmove);
+
+document.addEventListener('keydown', function (event) {
+    switch (event.key) {
+        case 'ArrowUp':
+            animateRotation(0, 0, Date.now());
+            break;
+        case 'ArrowDown':
+            animateRotation(0, 1, Date.now());
+            break;
+        case 'ArrowLeft':
+            animateRotation(1, 0, Date.now());
+            break;
+        case 'ArrowRight':
+            animateRotation(1, 1, Date.now());
+            break;
+    }
+});
+</script>
+</body>
+</html>
